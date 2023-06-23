@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Masque les barres de défilement spécifiquement pour les navigateurs WebKit */
+/* (Chrome, Safari, et autres navigateurs utilisant le moteur WebKit) */
+::-webkit-scrollbar {
+  width: 0.1em;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
