@@ -3,11 +3,17 @@ import React from "react";
 function TopBar() {
 
   return (
-    <div class="w-full h-[56px] flex-shrink-0 flex flex-row items-center pl-[24px] relative">
-      <span class="w-[196px] h-[56px] text-white flex p-[8px] hover:bg-zinc-800 relative flex-row items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-        </svg>
+    <div class="w-full h-[56px] flex-shrink-0 flex flex-row items-center pl-[24px] relative overflow-hidden">
+      <span class="w-[196px] h-[56px] text-white flex p-[8px] relative flex-row items-center">
+        <span class="w-[40px] h-[40px] rounded-full hover:bg-zinc-700 flex flex-col justify-center items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </span>
+        <span id="logo" class="w-3/4 flex flex-row items-center ml-2">
+          <img src="./images/logo.png" width="30" height="30" class="relative" alt="" />
+          <p class="font-bold text-[22px] ml-[4px] relative">YouTube</p>
+        </span>
       </span>
       <div class="w-full h-full flex flex-col justify-center items-center">
         <div class="h-[40px] w-[470px] flex flex-row">
