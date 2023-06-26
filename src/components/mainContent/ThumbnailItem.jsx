@@ -1,12 +1,12 @@
 import React from "react";
 
-function ThumbnailItem(){
+function ThumbnailItem({video}){
   return (
   <div class="text-white w-[276px] h-[247px] flex flex-col pb-[18px] mr-4 flex-shrink-0 relative mb-[40px]">
     <div class="w-full h-[155px] flex relative">
       {/* eslint-disable-next-line */}
-      <img src="./images/youtube.jpg" class="h-full w-full"/>
-      <span class="w-auto h-auto px-[4px] py-[3px] flex absolute bottom-1 bg-black right-1 text-sm">23:45</span>
+      <img src={video.video.thumbnails[0].url} class="h-full w-full"/>
+      <span class="w-auto h-auto px-[4px] py-[3px] flex absolute bottom-1 bg-black right-1 text-sm">{video.video.lengthText}</span>
     </div>
 
     <div class="flex flex-row relative">
@@ -15,11 +15,11 @@ function ThumbnailItem(){
       </span>
       <span class="flex flex-col w-auto h-auto relative pt-[8px]">
         <span class=" flex flex-col h-[28px] w-[204px] text-white relative">
-          <p class="text-[11px]">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p class="text-[11px]">{video.video.title}</p>
         </span>
         <span class=" flex flex-col h-[28px] w-[204px] relative mt-[6px]">
-          <p class="text-[11px] text-zinc-500">James Gouse</p>
-          <p class="text-[11px] text-zinc-500">15K Views .1 week ago</p>
+          <p class="text-[11px] text-zinc-500">{video.video.channelName}</p>
+          <p class="text-[11px] text-zinc-500">{video.video.viewCountText} . {video.video.publishedTimeText}</p>
         </span>
       </span>
     </div>
