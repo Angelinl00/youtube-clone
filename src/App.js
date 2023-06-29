@@ -7,6 +7,7 @@ import React from "react";
 
 import {Routes , Route} from "react-router-dom";
 import Home from './Home';
+import Channel from './Channel';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/channel" element={<Home/>} />
+        <Route path="/channel" element={<Channel/>} />
         <Route path="/video" element={<Home/>} />
       </Routes>
     </div>

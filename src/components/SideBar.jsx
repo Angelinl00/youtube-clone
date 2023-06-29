@@ -8,19 +8,19 @@ function SideBar() {
 
   // eslint-disable-next-line
   const [sidebarTopMenuItems , setSidebarTopMenuItems] = useState([
-    {id : 1 , title : "titre"},
-    {id : 2 , title : "titre2"},
-    {id : 3 , title : "titre3"},
+    {id : 1 , title : "Home"},
+    {id : 2 , title : "Explore"},
+    {id : 3 , title : "Subscriptions"},
   ]);
 
   // eslint-disable-next-line
   const [sidebarTopMenu2Items , setSidebarTopMenu2Items] = useState([
-    {id : 1 , title : "titre"},
-    {id : 2 , title : "titre2"},
-    {id : 3 , title : "titre3"},
-    {id : 4 , title : "titre3"},
-    {id : 5 , title : "titre3"},
-    {id : 6 , title : "titre3"},
+    {id : 1 , title : "Library"},
+    {id : 2 , title : "History"},
+    {id : 3 , title : "Your Videos"},
+    {id : 4 , title : "Watch Later"},
+    {id : 5 , title : "Likeed Videos"},
+    {id : 6 , title : "Show More"},
   ]);
 
   const [subscriptions , setSubscriptions] = useState([
@@ -54,7 +54,7 @@ function SideBar() {
     <div class="py-[12px] w-full h-auto border-b border-zinc-700">
       <ul class="flex flex-col w-full h-full py-[12px]">
         {sidebarTopMenuItems.map((item) => {
-          return <SidebarMenuItem />
+          return <SidebarMenuItem title={item.title} />
         })}
       </ul>
     </div>
@@ -63,7 +63,7 @@ function SideBar() {
     <div class="py-[12px] w-full h-auto border-b border-zinc-700">
       <ul class="flex flex-col w-full h-full py-[12px]">
         {sidebarTopMenu2Items.map((item) => {
-          return <SidebarMenuItem />
+          return <SidebarMenuItem title={item.title} />
         })}
       </ul>
     </div>
