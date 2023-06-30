@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SmalVideo() {
+function SmalVideo({smalVideo}) {
   return (
     <div className='h-auto w-full pl-[65px] py-[24px] flex '>
       <div className='h-auto w-auto relative flex flex-row '>
