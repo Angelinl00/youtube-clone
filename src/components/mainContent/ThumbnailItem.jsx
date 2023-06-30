@@ -1,6 +1,11 @@
 import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ThumbnailItem({video}){
+
+  const [channelIdlink , setChannelIdLink] = useState("/channel/"+video.video.channelId);
+
   return (
   <div class="text-white w-[276px] h-[247px] flex flex-col pb-[18px] mr-4 flex-shrink-0 relative mb-[40px]">
     <div class="w-full h-[155px] flex relative">
@@ -18,7 +23,7 @@ function ThumbnailItem({video}){
           <p class="text-[11px]">{video.video.title}</p>
         </span>
         <span class=" flex flex-col h-[28px] w-[204px] relative mt-[6px]">
-          <p class="text-[11px] text-zinc-500">{video.video.channelName}</p>
+          <Link className="text-[11px] text-zinc-500" to={channelIdlink}>{video.video.channelName}</Link>
           <p class="text-[11px] text-zinc-500">{video.video.viewCountText} . {video.video.publishedTimeText}</p>
         </span>
       </span>

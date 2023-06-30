@@ -1,6 +1,88 @@
 import React from "react";
+// eslint-disable-next-line
+import { useRef , useState , useEffect } from "react";
+
+/* import axios from "axios";
+import history from "history/browser"; */
 
 function TopBar() {
+
+/*   const channel = useRef();
+
+  // eslint-disable-next-line
+  const [search , setSearch] = useState("");
+
+  const [searchResult , setSearchResult] = useState(null)
+
+  async function getApi(research) {
+      
+    const options = {
+      method: 'GET',
+      url: 'https://youtube-search-and-download.p.rapidapi.com/search',
+      params: {
+        query: research,
+        next: 'EogDEgVoZWxsbxr-AlNCU0NBUXRaVVVoeldFMW5iRU01UVlJQkMyMUlUMDVPWTFwaWQwUlpnZ0VMWW1VeE1rSkROWEJSVEVXQ0FRdFZNMEZUYWpGTU5sOXpXWUlCQzJaaGVrMVRRMXBuTFcxM2dnRUxaV3hrWldGSlFYWmZkMFdDQVExU1JGbFJTSE5ZVFdkc1F6bEJnZ0VMT0hwRVUybHJRMmc1Tm1PQ0FRc3pOMFU1VjNORWJVUmxaNElCQzJGaFNXcHpPRXN6YjFsdmdnRUxaMmRvUkZKS1ZuaEdlRldDQVF0clN6UXlURnB4VHpCM1FZSUJDME42VHpOaFNXVXdVbkJ6Z2dFTFNVNHdUMk5WZGtkaU5qQ0NBUXRSYTJWbGFGRTRSRjlXVFlJQkMyWk9NVU41Y2pCYVN6bE5nZ0VMZEZac1kwdHdNMkpYU0RpQ0FRdGZSQzFGT1Rsa01XSk1TWUlCQzJoQlUwNVRSSFZOY2pGUmdnRUxkREEzTVZkdE5EVnhWMDAlM0QYgeDoGCILc2VhcmNoLWZlZWQ%3D',
+        hl: 'en',
+        gl: 'US',
+        upload_date: 't',
+        type: 'v',
+        duration: 's',
+        features: 'li;hd',
+        sort: 'v'
+      },
+      headers: {
+        'X-RapidAPI-Key': 'b788b8067fmsh868a9ff4872e0f5p150819jsn88695d30fce0',
+        'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+      }
+    };
+
+    try {
+      const response = await axios.request(options);
+      const content = response.data;
+      if(content != null) {
+        setSearchResult(content)
+        console.log(content)
+
+        fetch("http://localhost:3000/channel", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(content)
+        })
+        .then(function(response) {
+          // Gérer la réponse de la requête
+          if (response.ok) {
+            console.log('Redirection réussie');
+            // Faire quelque chose après la redirection, si nécessaire
+          } else {
+            console.error('La redirection a échoué');
+            // Gérer l'erreur, si nécessaire
+          }
+        })
+        .catch(function(error) {
+          console.error('Une erreur s\'est produite', error);
+          // Gérer l'erreur, si nécessaire
+        });
+
+      } else {
+        console.log(searchResult)
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    
+  }
+
+  function getChannel () {
+    
+    console.log(channel.current.value);
+    const value = channel.current.value;
+    setSearch(value);
+    getApi(search);
+
+  }
+ */
 
   return (
     <div class="w-full h-[56px] flex-shrink-0 flex flex-row items-center pl-[24px] relative overflow-hidden">
@@ -11,13 +93,13 @@ function TopBar() {
           </svg>
         </span>
         <span id="logo" class="w-3/4 flex flex-row items-center ml-2">
-          <img src="./images/logo.png" width="30" height="30" class="relative" alt="" />
+          <img src="http://localhost:3000/images/logo.png" width="30" height="30" class="relative" alt="" />
           <p class="font-bold text-[22px] ml-[4px] relative">YouTube</p>
         </span>
       </span>
       <div class="w-full h-full flex flex-col justify-center items-center">
         <div class="h-[40px] w-[470px] flex flex-row">
-          <input type="text" class="h-full w-[362px] bg-[#121212] border-none outline-none pl-[8px] text-white" placeholder="Search" />
+          <input class="h-full w-[362px] bg-[#121212] border-none outline-none pl-[8px] text-white" name="q" placeholder="Search" />
           <button class="w-[64px] h-full flex flex-col justify-center items-center text-center bg-zinc-700 text-white mr-[4px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -52,7 +134,7 @@ function TopBar() {
 
         <span class="h-full w-[60px] flex flex-col justify-center items-center">
         {/* eslint-disable-next-line */}
-          <img src="./images/unnamed.png" class="h-[32px] w-[32px] rounded-full " />
+          <img src="http://localhost:3000/images/unnamed.png" class="h-[32px] w-[32px] rounded-full " />
         </span>
 
       </span>
