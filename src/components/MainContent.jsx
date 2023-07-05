@@ -24,7 +24,8 @@ function MainContent({videos}) {
       })}
     
     </div>
-  </div>)
+  </div>
+  )
 };
 
 export default MainContent;

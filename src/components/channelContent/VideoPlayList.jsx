@@ -1,11 +1,11 @@
 import React from 'react'
 
-function VideoPlayList() {
+function VideoPlayList({avatar}) {
   return (
     <div class="text-white w-[214px] h-[194px] flex flex-col pb-[18px] flex-shrink-0 relative">
       <div class="w-[210px] h-[118px] flex relative">
         {/* eslint-disable-next-line */}
-        <img src="./images/youtube.jpg" class="h-full w-full"/>
+        <img src={avatar} class="h-full w-full"/>
         <span class="w-auto h-auto py-[3px] flex absolute bottom-1 bg-black right-1 text-sm">23:45</span>
       </div>
 

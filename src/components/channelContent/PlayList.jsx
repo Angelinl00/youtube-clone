@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoPlayList from './VideoPlayList';
 
-function PlayList() {
+function PlayList({avatar}) {
   return (
     <div className='w-full h-auto flex pl-[65px]'>
       <div className='w-auto h-auto pt-[8px] flex flex-col items-start justify-start border-t border-zinc-500 '>
@@ -19,14 +19,14 @@ function PlayList() {
         </div>
 
         <div className=' py-[24px] flex flex-row flex-nowrap w-[1200px] overflow-x-scroll'>
-          <VideoPlayList />
-          <VideoPlayList />
-          <VideoPlayList />
-          <VideoPlayList />
-          <VideoPlayList />
-          <VideoPlayList />
-          <VideoPlayList />
-          <VideoPlayList />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
+          <VideoPlayList avatar={avatar} />
         </div>
       </div>
     </div>
