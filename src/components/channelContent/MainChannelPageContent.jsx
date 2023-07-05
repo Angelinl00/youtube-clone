@@ -54,10 +54,8 @@ function MainChannelPageContent({channel}) {
     <div className='bg-black w-full h-auto flex flex-col items-start'>
       {smalVideo ? (<SmalVideo smalVideo={smalVideo} />) : (<span></span>)}
       
-      {smalVideo ? (<PlayList avatar={channelInfo.avatar.thumbnails[0].url} />) : (<span></span>)}
-      {smalVideo ? (<PlayList avatar={channelInfo.avatar.thumbnails[0].url} />) : (<span></span>)}
-      {smalVideo ? (<PlayList avatar={channelInfo.avatar.thumbnails[0].url} />) : (<span></span>)}
-      {smalVideo ? (<PlayList avatar={channelInfo.avatar.thumbnails[0].url} />) : (<span></span>)}
+      {smalVideo ? (<PlayList infos={channelInfo} />) : (<span></span>)}
+      
     </div>
   )
 }

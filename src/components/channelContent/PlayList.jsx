@@ -1,7 +1,10 @@
 import React from 'react'
 import VideoPlayList from './VideoPlayList';
+import { useEffect } from 'react';
 
-function PlayList({avatar}) {
+function PlayList({infos}) {
+
+  
   return (
     <div className='w-full h-auto flex pl-[65px]'>
       <div className='w-auto h-auto pt-[8px] flex flex-col items-start justify-start border-t border-zinc-500 '>
@@ -19,14 +22,10 @@ function PlayList({avatar}) {
         </div>
 
         <div className=' py-[24px] flex flex-row flex-nowrap w-[1200px] overflow-x-scroll'>
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
-          <VideoPlayList avatar={avatar} />
+          {infos.contents.map((item) => {
+            return (<VideoPlayList infos={item} />)
+          })}
+          
         </div>
       </div>
     </div>
