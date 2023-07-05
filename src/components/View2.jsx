@@ -20,7 +20,7 @@ export default function View2(){
             gl: 'US'
           },
           headers: {
-            'X-RapidAPI-Key': 'ee1577e6demsh4aff8438c8ce214p14976djsn7f88ed8d5a9c',
+            'X-RapidAPI-Key': '21ed3ab3aemshc27c40ef472539cp108df9jsn8996aef9822d',
             'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
           }
         };

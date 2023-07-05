@@ -19,7 +19,7 @@ function TopChannelNavbar({channel}) {
           sort: 'n'
         },
         headers: {
-          'X-RapidAPI-Key': 'b788b8067fmsh868a9ff4872e0f5p150819jsn88695d30fce0',
+          'X-RapidAPI-Key': '21ed3ab3aemshc27c40ef472539cp108df9jsn8996aef9822d',
           'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
         }
       };
