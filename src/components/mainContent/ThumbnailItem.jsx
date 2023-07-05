@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Channel from './../../Channel';
+import axios from "axios";
 
 function ThumbnailItem({video}){
+
+  const [channelInfo , setChannelInfo] = useState();
+  const [channelId , setChannelId] = useState(video.video.channelId);
+
+  useEffect(() => {
+    (async function getApi() {
+      
+      const options = {
+        method: 'GET',
+        url: 'https://youtube-search-and-download.p.rapidapi.com/channel',
+        params: {
+          id: channelId,
+          sort: 'n'
+        },
+        headers: {
+          'X-RapidAPI-Key': 'b788b8067fmsh868a9ff4872e0f5p150819jsn88695d30fce0',
+          'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await axios.request(options);
+        const content = response.data;
+        setChannelInfo(content);
+        
+      } catch (error) {
+        console.error(error);
+      }
+      
+    })()
+
+  } , [])
+
+  
 
   const [channelIdlink , setChannelIdLink] = useState("/channel/"+video.video.channelId);
 
@@ -20,7 +56,8 @@ function ThumbnailItem({video}){
 
     <div class="flex flex-row relative">
       <span class="w-auto h-auto flex flex-start pt-[12px] pr-[12px] pb-[26px] relative">
-        <img src="./images/unnamed.png" alt="" class="h-[36px] w-[36px] rounded-full" />
+        {channelInfo ? (<img src={channelInfo.avatar.thumbnails[0].url} alt="" class="h-[36px] w-[36px] rounded-full" />) : (<span></span>)}
+        
       </span>
       <span class="flex flex-col w-auto h-auto relative pt-[8px]">
         <span class=" flex flex-col h-[28px] w-[204px] text-white relative">
