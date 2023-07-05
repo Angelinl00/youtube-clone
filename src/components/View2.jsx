@@ -52,7 +52,7 @@ export default function View2(){
                          title={item.video.title}
                           time={item.video.lengthText}
                           views = {item.video.viewCountText}
-                          img={item.video.thumbnails[0].url}  />
+                          img={item.video.thumbnails[0].url} video={item}  />
                     )
                 })
             }

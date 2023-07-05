@@ -2,7 +2,7 @@ import React from 'react'
 
 function VideoPlayList({avatar}) {
   return (
-    <div class="text-white w-[214px] h-[194px] flex flex-col pb-[18px] flex-shrink-0 relative">
+    <div class="text-white w-[214px] h-[194px] flex flex-col pb-[18px] flex-shrink-0 relative mr-5">
       <div class="w-[210px] h-[118px] flex relative">
         {/* eslint-disable-next-line */}
         <img src={avatar} class="h-full w-full"/>

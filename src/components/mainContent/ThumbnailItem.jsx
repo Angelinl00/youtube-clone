@@ -6,11 +6,15 @@ function ThumbnailItem({video}){
 
   const [channelIdlink , setChannelIdLink] = useState("/channel/"+video.video.channelId);
 
+  const [videoIdLink , setVideoIdLink ] = useState("/video/"+video.video.videoId);
+
   return (
   <div class="text-white w-[276px] h-[247px] flex flex-col pb-[18px] mr-4 flex-shrink-0 relative mb-[40px]">
     <div class="w-full h-[155px] flex relative">
       {/* eslint-disable-next-line */}
-      <img src={video.video.thumbnails[0].url} class="h-full w-full"/>
+      <Link to={videoIdLink} className="h-full w-full">
+        <img src={video.video.thumbnails[0].url} class="h-full w-full"/>
+      </Link>
       <span class="w-auto h-auto px-[4px] py-[3px] flex absolute bottom-1 bg-black right-1 text-sm">{video.video.lengthText}</span>
     </div>
 

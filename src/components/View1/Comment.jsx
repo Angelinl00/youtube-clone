@@ -1,7 +1,39 @@
-import React from 'react' ;
+import React, { useEffect } from 'react' ;
 import { useState } from 'react';
+import axios from "axios";
 
-export default function Comment(){
+export default function Comment({videoInfos}){
+
+    const [comments , setComments] = useState([]);
+
+    useEffect(() => {
+        (async function getComment() {
+            const options = {
+                method: 'GET',
+                url: 'https://youtube-search-and-download.p.rapidapi.com/video/comments',
+                params: {
+                  id: videoInfos.videoId,
+                  next: 'Eg0SC1lRSHNYTWdsQzlBGAYyJSIRIgtZUUhzWE1nbEM5QTAAeAJCEGNvbW1lbnRzLXNlY3Rpb24%3D'
+                },
+                headers: {
+                  'X-RapidAPI-Key': '21ed3ab3aemshc27c40ef472539cp108df9jsn8996aef9822d',
+                  'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+                }
+              };
+              
+              try {
+                  const response = await axios.request(options);
+                  console.log(response.data);
+                  setComments(response.data.comments);
+              } catch (error) {
+                  console.error(error);
+              }
+        })()
+    } , []);
+
+/*     useEffect(() => {
+        console.log(comments);
+    } , []); */
 
 return (
     <div className="h-95 w-[540px] py-4 px-1 ml-20 tansform translate-x-[20px] text-white space-y-3">
@@ -25,29 +57,36 @@ return (
                 </div>
             </div>
         </div>
-        <div className="comment flex space-x-3">
-            <div className="image rounded-full h-[50px] w-[50px] border border-gray-500">
-                <img  className="rounded-full hover:cursor-pointer" src="images/pop2.jpg" alt="comp" />
-            </div>
-            <div className="comment-content text-sm space-y-2">
-                <div className="name font-bold">James Gous <span className="text-gray-500 ml-2">8 hours ago</span></div>
-                <div className="text text-white">Wow,word is full of different skills</div>
-                <div className="licke space-x-3 flex items-center">
-                    <div className="agree flex  space-x-2">
-                        <div className="hover:cursor-pointer">
-                            <ion-icon className='text-white' name="thumbs-up"></ion-icon>
-                        </div>
-                        <div className="number text-gray-500">3</div>
+
+        {comments.map((comment) => {
+            return (
+                <div className="comment flex space-x-3">
+                    <div className="image rounded-full h-[50px] w-[50px] border border-gray-500">
+                        <img  className="rounded-full hover:cursor-pointer" src="images/pop2.jpg" alt="comp" />
                     </div>
-                    <div className="not-agree flex  space-x-2">
-                        <div className="hover:cursor-pointer">
-                            <ion-icon className='text-white' name="thumbs-down"></ion-icon>
+                    <div className="comment-content text-sm space-y-2">
+                        <div className="name font-bold"> {comment.authorName} <span className="text-gray-500 ml-2">{comment.publishedTimeText}</span></div>
+                        <div className="text text-white">{comment.text}</div>
+                        <div className="licke space-x-3 flex items-center">
+                            <div className="agree flex  space-x-2">
+                                <div className="hover:cursor-pointer">
+                                    <ion-icon className='text-white' name="thumbs-up"></ion-icon>
+                                </div>
+                                <div className="number text-gray-500">{comment.likes}</div>
+                            </div>
+                            <div className="not-agree flex  space-x-2">
+                                <div className="hover:cursor-pointer">
+                                    <ion-icon className='text-white' name="thumbs-down"></ion-icon>
+                                </div>
+                                <div className="number text-gray-500"> {comment.replyCount} </div>
+                            </div>
+                            <div className="reply text-gray-500 text-lg hover:cursor-pointer">REPLY</div>
                         </div>
-                        <div className="number text-gray-500"> </div>
                     </div>
-                    <div className="reply text-gray-500 text-lg hover:cursor-pointer">REPLY</div>
                 </div>
-            </div>
-        </div>
+            )
+        })}
+
+        
     </div>)
 }
