@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function VideoPlayList({infos}) {
 
   const [author , setAuthor] = useState(infos.video.title.split("-")[1]);
+
+  const [routeVideo , setRouteVideo] = useState("/video/"+infos.video.id);
 
   useEffect(() => {
     console.log(infos);
@@ -15,7 +18,9 @@ function VideoPlayList({infos}) {
     <div class="text-white w-[214px] h-[194px] flex flex-col pb-[18px] flex-shrink-0 relative mr-5">
       <div class="w-[210px] h-[118px] flex relative">
         {/* eslint-disable-next-line */}
-        <img src={infos.video.thumbnails[0].url} class="h-full w-full"/>
+        <Link to={routeVideo} class="h-full w-full" >
+          <img src={infos.video.thumbnails[0].url} class="h-full w-full"/>
+        </Link>
         <span class="w-auto h-auto py-[3px] flex absolute bottom-1 bg-black right-1 text-sm">{infos.video.lengthText}</span>
       </div>
 
