@@ -16,6 +16,8 @@ export default function View({videoId}){
     
     const [videoInfos , setVideosInfos] = useState();
 
+    const [video , setVideo] = useState();
+
 /*     useEffect(() => {
         console.log(videoId);
     } , []); */
@@ -36,6 +38,7 @@ export default function View({videoId}){
               try {
                   const response = await axios.request(options);
                   setVideosInfos(response.data.videoDetails);
+                  setVideo(response.data.streamingData.adaptiveFormats[0].url)
               } catch (error) {
                   console.error(error);
               }
@@ -53,7 +56,7 @@ export default function View({videoId}){
         {videoInfos ? (
             <div className=" main ml-40">
             <div className="video relative flex px-5 pt-2 ml-20 ">
-                    <img className="h-[290px] w-[550px]" src={videoInfos.thumbnail.thumbnails[1].url} alt=".." />
+                    <iframe className="h-[290px] w-[550px]" src={video} ></iframe>
                     <div className="icon-information ml-80 mt-5 bg-white absolute text-black flex justify-center items-center h-4 w-4 tansform translate-x-[180px] rounded-full text-2xl hover: cursor-pointer ">
                         <ion-icon name="information"></ion-icon>
                     </div>
