@@ -10,28 +10,28 @@ export default function View2(){
 
     useEffect(() => {
         (async function () {
-            const options = {
-                method: 'GET',
-                url: 'https://youtube-search-and-download.p.rapidapi.com/trending',
-                params: {
-                    type: 'mu',
-                    hl: 'en',
-                    gl: 'US'
-                },
-                headers: {
-                    'X-RapidAPI-Key': '21ed3ab3aemshc27c40ef472539cp108df9jsn8996aef9822d',
-                    'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
-                }
-            };
-
-            try {
-                const response = await axios.request(options);
-                setVideos(response.data.contents)
-
-            } catch (error) {
-                console.error(error);
-            }
-        })();
+        const options = {
+          method: 'GET',
+          url: 'https://youtube-search-and-download.p.rapidapi.com/trending',
+          params: {
+            type: 'mu',
+            hl: 'en',
+            gl: 'US'
+          },
+          headers: {
+              'X-RapidAPI-Key': 'b788b8067fmsh868a9ff4872e0f5p150819jsn88695d30fce0',
+            'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+          }
+        };
+        
+        try {
+            const response = await axios.request(options);
+            setVideos(response.data.contents)
+            
+        } catch (error) {
+            console.error(error);
+        }
+    })();
     },[])
     
 

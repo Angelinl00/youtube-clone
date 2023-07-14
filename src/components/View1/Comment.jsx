@@ -16,7 +16,7 @@ export default function Comment({videoInfos}){
                   next: 'Eg0SC1lRSHNYTWdsQzlBGAYyJSIRIgtZUUhzWE1nbEM5QTAAeAJCEGNvbW1lbnRzLXNlY3Rpb24%3D'
                 },
                 headers: {
-                  'X-RapidAPI-Key': '21ed3ab3aemshc27c40ef472539cp108df9jsn8996aef9822d',
+                    'X-RapidAPI-Key': 'b788b8067fmsh868a9ff4872e0f5p150819jsn88695d30fce0',
                   'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
                 }
               };
@@ -62,7 +62,7 @@ return (
             return (
                 <div className="comment flex space-x-3">
                     <div className="image rounded-full h-[50px] w-[50px] border border-gray-500">
-                        <img  className="rounded-full hover:cursor-pointer" src="images/pop2.jpg" alt="comp" />
+                        <img  className="rounded-full hover:cursor-pointer" src={comment.authorThumbnails[0].url}  />
                     </div>
                     <div className="comment-content text-sm space-y-2">
                         <div className="name font-bold"> {comment.authorName} <span className="text-gray-500 ml-2">{comment.publishedTimeText}</span></div>
