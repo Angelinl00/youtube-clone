@@ -61,8 +61,7 @@ export default function View({videoId}){
                         <ion-icon name="information"></ion-icon>
                     </div>
                 </div>
-                <ProgressBar />
-                <Play/>
+                
                 <div className="like-and-comment w-640px divide-y gap-y-2 mt-1">
                     <Information videoInfos={videoInfos} />
                     <Subscried channelInfos={videoInfos.channelId} videoInfos={videoInfos} />
