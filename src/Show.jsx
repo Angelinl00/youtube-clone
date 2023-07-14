@@ -16,7 +16,7 @@ export default function Show(){
     return (
         <div className='h-auto w-screen bg-[#181818]'>
             <TopBar/>
-            <div className="min-h-[90%] bg-transparent flex overflow-y-scroll ">
+            <div className="h-[90%] bg-transparent flex overflow-y-scroll ">
                 <View1 videoId={videoId} />
                 <View2 />
             </div>

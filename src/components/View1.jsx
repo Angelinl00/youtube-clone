@@ -52,7 +52,7 @@ export default function View({videoId}){
     } , [videoInfos]) */
 
      return (
-     <div className="part1  h-full flex flex-shrink-0 overflow-y-scroll w-3/5 overflow-x-hidden ">
+     <div className="part1  h-auto flex flex-shrink-0 overflow-y-scroll w-3/5 overflow-x-hidden ">
         {videoInfos ? (
             <div className=" main ml-40">
             <div className="video relative flex px-5 pt-2 ml-20 ">
